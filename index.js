@@ -23,6 +23,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.set('trust proxy', 1);
 // almacenamiento en memoria
 app.use(
   session({
