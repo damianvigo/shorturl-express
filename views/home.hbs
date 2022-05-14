@@ -1,0 +1,18 @@
+
+<div class="row align-items-center">
+   <div class="col-lg-6">
+   {{#if url}}
+   <h1>Editar su URL</h1>
+   {{else}}
+   <h1>Agregue sus URL</h1>
+   {{/if}}
+{{> Form}}
+   </div>
+   <div class="col-lg-6">
+ {{#each urls }}
+    {{> Card item=this}}
+ {{/each}}
+   </div>
+
+
+</div>
