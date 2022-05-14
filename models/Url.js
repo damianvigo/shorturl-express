@@ -4,7 +4,6 @@ const { Schema } = mongoose;
 const urlSchema = new Schema({
   origin: {
     type: String,
-    unique: true,
     required: true,
   },
   shortURL: {
