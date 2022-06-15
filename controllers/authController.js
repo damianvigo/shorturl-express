@@ -66,7 +66,9 @@ const registerUser = async (req, res) => {
     });
 
     req.flash('mensajes', [
-      { msg: 'Revisa tu correo electronico y valida tu cuenta' },
+      {
+        msg: 'Revisa tu correo electrónico  y válida tu cuenta | Inicia sesión  directamente',
+      },
     ]);
     res.redirect('/auth/login');
     // console.log(user);
@@ -120,10 +122,10 @@ const loginUser = async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) throw new Error('No existe este correo electrónico');
 
-    if (!user.cuentaConfirmada)
+    /*     if (!user.cuentaConfirmada)
       throw new Error(
         'Falta confirmar tu cuenta, revisa tu correo electrónico '
-      );
+      ); */
 
     if (!(await user.comparePassword(password)))
       throw new Error(
