@@ -1,4 +1,5 @@
 const express = require('express');
+const csrf = require('csurf');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
@@ -6,7 +7,6 @@ const passport = require('passport');
 const mongoSanitize = require('express-mongo-sanitize');
 const cors = require('cors');
 const { create } = require('express-handlebars');
-const csrf = require('csurf');
 const User = require('./models/User');
 
 require('dotenv').config();
